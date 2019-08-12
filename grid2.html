@@ -1,0 +1,61 @@
+<html>
+<head>
+    <style>
+    .grid
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1rem;
+    }
+
+    .grid div
+    {
+        background-color: black;
+        color: white;
+        font-size: 2fr;
+        padding:45%;
+        height:20px;
+    }
+
+    .empty1
+    {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+    }
+
+    .empty2
+    {
+        grid-row: 2 / 3;
+        grid-column: -2 / -1;
+    }
+
+    .empty3
+    {
+        grid-row: 3 / 4;
+        grid-column:1 / 2;
+    }
+    </style>
+</head>
+
+
+<div class="grid">
+    <div class="empty1"></div>
+    <div class="empty2"></div>
+    <div class="empty3"></div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+
+
+    
+</html>
+
+

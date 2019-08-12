@@ -1,27 +1,37 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width">
     <style>
+    body
+    {
+        margin:0;
+    }
+
     .grid
     {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 10px;
+        grid-template-rows: repeat(auto, 200px);
     }
+
+
+    .empty1, .empty2, .empty3
+    {
+            background: transparent;
+    }  
 
     .grid div
     {
-        background-color: black;
         color: white;
         font-size: 2fr;
         padding:45%;
-        height:20px;
     }
 
     .empty1
     {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-
     }
 
     .empty2
@@ -35,23 +45,95 @@
         grid-row: 3 / 4;
         grid-column:1 / 2;
     }
+
+    .empty4
+    {
+        grid-row: 4 / 5;
+        grid-column:-2 / -1;
+    }
+
+    .empty5
+    {
+        grid-row: 5 / 6;
+        grid-column:1 / 2;
+    }
+
+    .empty6
+    {
+        grid-row: 6 / 7;
+        grid-column:-2 / -1;
+    }
+
+
+    .empty7
+    {
+        grid-row: 7 / 8;
+        grid-column:1 / 2;
+    }
+
+    .empty8
+    {
+        grid-row: 8 / 9;
+        grid-column:-2 / -1;
+    }
+
+    .empty9
+    {
+        grid-row: 9 / 10;
+        grid-column:1 / 2;
+    }
+
+    .notempty
+    {
+        background:black;
+    }
+
+
+    @media only screen and (max-width: 627px) 
+    {
+        .empty
+        {
+            display: none;
+        }        
+    }
+
+    @media only screen and (min-width: 1200px)
+    {
+        .empty6, .empty7, .empty8, .empty9
+        {
+            display:none;
+        }
+    }
     </style>
 </head>
 
 
 <div class="grid">
-    <div class="empty1"></div>
-    <div class="empty2"></div>
-    <div class="empty3"></div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
+    <div class="empty1 empty"></div>
+    <div class="empty2 empty"></div>
+    <div class="empty3 empty"></div>
+    <div class="empty4 empty"></div>
+    <div class="empty5 empty"></div>
+    <div class="empty6 empty"></div>
+    <div class="empty7 empty"></div>
+    <div class="empty8 empty"></div>
+    <div class="empty9 empty"></div>
+    <div class="notempty">1</div>
+    <div class="notempty">2</div>
+    <div class="notempty">3</div>
+    <div class="notempty">4</div>
+    <div class="notempty">5</div>
+    <div class="notempty">6</div>
+    <div class="notempty">7</div>
+    <div class="notempty">8</div>
+    <div class="notempty last">9</div>
+
+    <script>
+        var a = document.getElementsByClassName("last");
+        var distanceFromTop = a.getBoundingClientRect().top +  a.style.height;
+        document.body.style.height = distanceFromTop;
+    </script> 
+
 </div>
 
 

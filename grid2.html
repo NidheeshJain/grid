@@ -6,100 +6,93 @@
     {
         margin:0;
     }
-
     .grid
     {
+        position:relative;
+        top: 0;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 10px;
         grid-template-rows: repeat(auto, 200px);
+        height:100vh;
     }
-
-
     .empty1, .empty2, .empty3
     {
             background: transparent;
     }  
-
     .grid div
     {
         color: white;
         font-size: 2fr;
         padding:45%;
     }
-
     .empty1
     {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
     }
-
     .empty2
     {
         grid-row: 2 / 3;
         grid-column: -2 / -1;
     }
-
     .empty3
     {
         grid-row: 3 / 4;
         grid-column:1 / 2;
     }
-
     .empty4
     {
         grid-row: 4 / 5;
         grid-column:-2 / -1;
     }
-
     .empty5
     {
         grid-row: 5 / 6;
         grid-column:1 / 2;
     }
-
     .empty6
     {
         grid-row: 6 / 7;
         grid-column:-2 / -1;
     }
-
-
     .empty7
     {
         grid-row: 7 / 8;
         grid-column:1 / 2;
     }
-
     .empty8
     {
         grid-row: 8 / 9;
         grid-column:-2 / -1;
     }
-
     .empty9
     {
         grid-row: 9 / 10;
         grid-column:1 / 2;
     }
-
     .notempty
     {
         background:black;
     }
-
-
-    @media only screen and (max-width: 627px) 
+    @media only screen and (max-width: 629px) 
     {
         .empty
         {
             display: none;
         }        
     }
-
-    @media only screen and (min-width: 1200px)
+    @media (min-width: 938px) and (max-width:1248.5px)
     {
         .empty6, .empty7, .empty8, .empty9
+        {
+            display:none;
+        }
+    }
+
+    @media (min-width: 1248.5px)
+    {
+        .empty4, .empty5, .empty6, .empty7, .empty8, .empty9
         {
             display:none;
         }
@@ -128,16 +121,8 @@
     <div class="notempty">8</div>
     <div class="notempty last">9</div>
 
-    <script>
-        var a = document.getElementsByClassName("last");
-        var distanceFromTop = a.getBoundingClientRect().top +  a.style.height;
-        document.body.style.height = distanceFromTop;
-    </script> 
-
 </div>
 
 
     
 </html>
-
-
